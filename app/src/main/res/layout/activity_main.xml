@@ -279,11 +279,33 @@
             android:textColor="#FFFFFF"
             android:layout_marginBottom="16dp"/>
 
+        <!-- Step 0: ADB -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1- ADB üzerinden sisteme erişim izni verin (Bir kez yeterlidir):"
+            android:textSize="14sp"
+            android:textColor="#CCCCCC"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tvAdbCommand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="adb shell pm grant com.zewzack.pocovrr android.permission.WRITE_SECURE_SETTINGS"
+            android:textSize="11sp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="monospace"
+            android:background="#1A1A1A"
+            android:padding="12dp"
+            android:textIsSelectable="true"
+            android:layout_marginBottom="24dp"/>
+
         <!-- Step 1 -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1- Erişilebilirlik ayarlarını açıp indirilen uygulamalar altında PocoVRR'a izin verin."
+            android:text="2- Erişilebilirlik ayarlarını açıp indirilen uygulamalar altında PocoVRR'a izin verin."
             android:textSize="14sp"
             android:textColor="#CCCCCC"
             android:layout_marginBottom="12dp"/>
@@ -302,7 +324,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="2- Otomatik başlatmaya izin verin."
+            android:text="3- Otomatik başlatmaya izin verin."
             android:textSize="14sp"
             android:textColor="#CCCCCC"
             android:layout_marginBottom="12dp"/>
@@ -321,7 +343,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="3- Uygulamanın arkaplan görevini kısıtlamasını kaldırın."
+            android:text="4- Uygulamanın arkaplan görevini kısıtlamasını kaldırın."
             android:textSize="14sp"
             android:textColor="#CCCCCC"
             android:layout_marginBottom="4dp"/>
