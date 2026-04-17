@@ -18,6 +18,18 @@ PocoVRR, Poco X8 Pro Max (LTPS Panel) ve HyperOS cihazlar için özel olarak gel
 
 Uygulamanın çalışması için sistem ayarlarını değiştirme yetkisine sahip olması gerekir. Bu yetki sadece bilgisayar üzerinden bir kez verilebilir.
 
+### 🛡️ Neden Bu Kadar Fazla İzin Gerekiyor?
+
+<details>
+<summary><b>Detaylı Güvenlik ve Şeffaflık Açıklaması (Tıklayın)</b></summary>
+
+Android ekosisteminin geçmişinde, özellikle eski nesil cihazlarda son kullanıcıları riske atan birçok zararlı yazılım ve güvenlik açığı mevcuttu. Bu durum, teknik bilgi birikimi kısıtlı olan veya Android ekosistemine uzak kullanıcıların Android cihazları "güvensiz" olarak nitelendirmesine yol açmıştır.
+
+Google'ın güncel Android uygulama ve sürüm politikaları, cihazın işleyişini veya düzenini etkileyebilecek en küçük eylemlerde dahi son kullanıcının kesin ve bilinçli onayını şart koşmaktadır. Bu çok aşamalı işlem adımları (ADB komutları, Erişilebilirlik onayları vb.), kullanıcı güvenliğini en üst düzeyde korumayı hedefler. Biz geliştiriciler, bu süreçlerin kullanıcı deneyimini zaman zaman zorlaştırdığının farkındayız; ancak bu adımlar sistemin modern koruma mekanizmasının bir parçasıdır.
+
+**PocoVRR**, temel işlevlerini yerine getirebilmek adına `WRITE_SECURE_SETTINGS` ve Erişilebilirlik Servisi gibi sistem düzeyinde kritik yetkiler talep etmektedir. Uygulama tamamen **açık kaynak kodlu** olup, şeffaf bir şekilde incelenebilir ve **MIT Lisansı** ile korunmaktadır. Bu yetkileri verip uygulamayı kullanma takdiri tamamen size aittir.
+</details>
+
 ### 1. Adım: Telefondan Hazırlık
 1. **Ayarlar > Telefon Hakkında** kısmına gidin ve **OS Sürümü** (veya MIUI Sürümü) üzerine 7 kez dokunarak **Geliştirici Seçeneklerini** açın.
 2. **Ek Ayarlar > Geliştirici Seçenekleri** yolunu izleyin.
