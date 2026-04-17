@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PocoVRR</string>
+    <string name="service_label">PocoVRR Yenileme Hızı Servisi</string>
+    <string name="service_description">Hareket ve kaydırma algılandığında ekran yenileme hızını otomatik olarak yüksek Hz\'e çıkarır, hareketsizlikte düşük Hz\'e düşürür. Video/medya oynatılırken ve klavye açıkken düşük Hz\'de kalır. Pil tasarrufu sağlarken akıcılığı korur.</string>
+</resources>

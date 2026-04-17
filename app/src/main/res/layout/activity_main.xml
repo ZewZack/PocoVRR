@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="#000000"
+        android:padding="28dp">
+
+        <!-- Başlık -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PocoVRR"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="2dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Developer: @zewzack"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:alpha="0.7"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Poco X8 Pro Max · HyperOS"
+            android:textSize="13sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Servis durumu -->
+        <TextView
+            android:id="@+id/tvServiceStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kontrol ediliyor..."
+            android:textSize="16sp"
+            android:textColor="#AAAAAA"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Anlık Hz göstergesi -->
+        <TextView
+            android:id="@+id/tvCurrentHz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="— Hz"
+            android:textSize="72sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="14sp"
+            android:textColor="#888888"
+            android:layout_marginBottom="36dp"/>
+
+        <!-- ═══ AYARLAR ═══ -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#1A1A1A"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AYARLAR"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="#555555"
+            android:letterSpacing="0.15"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Idle Süresi -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bekleme Süresi (idle)"
+            android:textSize="14sp"
+            android:textColor="#CCCCCC"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <Button
+                android:id="@+id/btnIdle1"
+                style="@style/PocoVRR.ToggleButton"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="1s"
+                android:layout_marginEnd="6dp"/>
+
+            <Button
+                android:id="@+id/btnIdle2"
+                style="@style/PocoVRR.ToggleButton"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="2s"
+                android:layout_marginEnd="6dp"/>
+
+            <Button
+                android:id="@+id/btnIdle3"
+                style="@style/PocoVRR.ToggleButton"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="3s"/>
+        </LinearLayout>
+
+        <!-- Minimum Hz -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Minimum Hz"
+            android:textSize="14sp"
+            android:textColor="#CCCCCC"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <Button
+                android:id="@+id/btnMin30"
+                style="@style/PocoVRR.ToggleButton"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:text="30"
+                android:layout_marginEnd="6dp"/>
+
+            <Button
+                android:id="@+id/btnMin60"
+                style="@style/PocoVRR.ToggleButton"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="60"
+                android:layout_marginEnd="6dp"/>
+
+            <Button
+                android:id="@+id/btnMin90"
+                style="@style/PocoVRR.ToggleButton"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="90"
+                android:layout_marginEnd="6dp"/>
+
+            <Button
+                android:id="@+id/btnMin120"
+                style="@style/PocoVRR.ToggleButton"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="120"/>
+        </LinearLayout>
+
+        <!-- Maximum Hz -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Maximum Hz"
+            android:textSize="14sp"
+            android:textColor="#CCCCCC"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <Button
+                android:id="@+id/btnMax60"
+                style="@style/PocoVRR.ToggleButton"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="60"
+                android:layout_marginEnd="6dp"/>
+
+            <Button
+                android:id="@+id/btnMax90"
+                style="@style/PocoVRR.ToggleButton"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="90"
+                android:layout_marginEnd="6dp"/>
+
+            <Button
+                android:id="@+id/btnMax120"
+                style="@style/PocoVRR.ToggleButton"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="120"/>
+        </LinearLayout>
+
+        <!-- Deneysel Ayarlar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Deneysel Ayarlar (30 Hz)"
+                    android:textSize="14sp"
+                    android:textColor="#CCCCCC"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Minimum Hz'yi 30'a düşürmek stabilite sorunlarına yol açabilir."
+                    android:textSize="11sp"
+                    android:textColor="#666666"/>
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/switchExperimental30Hz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:thumbTint="#FFFFFF"
+                android:trackTint="#333333"/>
+        </LinearLayout>
+
+        <!-- ═══ ERİŞİM / İZİNLER ═══ -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#1A1A1A"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gerekli İzinlerin verilmesi:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Step 1 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1- Erişilebilirlik ayarlarını açıp indirilen uygulamalar altında PocoVRR'a izin verin."
+            android:textSize="14sp"
+            android:textColor="#CCCCCC"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/btnOpenAccessibility"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Erişilebilirlik Ayarlarını Aç"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Step 2 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2- Otomatik başlatmaya izin verin."
+            android:textSize="14sp"
+            android:textColor="#CCCCCC"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/btnOpenAutoStart"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Arka Planda Otomatik Başlatma"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Step 3 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3- Uygulamanın arkaplan görevini kısıtlamasını kaldırın."
+            android:textSize="14sp"
+            android:textColor="#CCCCCC"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Uygulamanın HyperOS optimizasyonu açısından otomatik olarak kapatılmaması içindir. Herhangi batarya / ekran süresi sorunu oluşturmaz."
+            android:textSize="12sp"
+            android:textColor="#888888"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/btnOpenBatteryOptimization"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Arkaplan Kısıtlamasını Kaldır"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginBottom="32dp"/>
+
+    </LinearLayout>
+</ScrollView>

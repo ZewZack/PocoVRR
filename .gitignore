@@ -1,0 +1,22 @@
+# Android Studio ve IntelliJ dosyaları
+.idea/
+*.iml
+.gradle/
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+*.hprof
+
+# Build çıktıları
+build/
+app/build/
+
+# Sistem ve Geçici dosyalar
+*.log
+.DS_Store
+
+# Keystore (Güvenlik için kritik)
+*.keystore
+*.jks
+*.pepk
