@@ -273,11 +273,44 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Gerekli İzinlerin verilmesi:"
+            android:text="Gerekli İzinlerin Verilmesi"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Neden İzin Gerekli? (Expandable) -->
+        <LinearLayout
+            android:id="@+id/layoutPermissionReason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#111111"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/tvPermissionReasonTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🛡️ Neden bu kadar fazla izin gerekli? (Tıklayın)"
+                android:textSize="13sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:drawableEnd="@android:drawable/arrow_down_float"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:id="@+id/tvPermissionReasonContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Android ekosisteminin geçmişinde, özellikle eski nesil cihazlarda son kullanıcıları riske atan birçok zararlı yazılım ve güvenlik açığı mevcuttu. Bu durum, teknik bilgi birikimi kısıtlı olan veya Android ekosistemine uzak kullanıcıların Android cihazları 'güvensiz' olarak nitelendirmesine yol açmıştır.\n\nGoogle'ın güncel Android uygulama ve sürüm politikaları, cihazın işleyişini veya düzenini etkileyebilecek en küçük eylemlerde dahi son kullanıcının kesin ve bilinçli onayını şart koşmaktadır. Bu çok aşamalı işlem adımları, kullanıcı güvenliğini en üst düzeyde korumayı hedefler. Biz geliştiriciler, bu süreçlerin kullanıcı deneyimini zaman zaman zorlaştırdığının farkındayız; ancak bu adımlar sistemin modern koruma mekanizmasının bir parçasıdır.\n\nPocoVRR, temel işlevlerini yerine getirebilmek adına WRITE_SECURE_SETTINGS ve Erişilebilirlik Servisi gibi sistem düzeyinde kritik yetkiler talep etmektedir. Uygulama tamamen açık kaynak kodlu olup, şeffaf bir şekilde incelenebilir ve MIT Lisansı ile korunmaktadır. Bu yetkileri verip uygulamayı kullanma takdiri tamamen size aittir."
+                android:textSize="12sp"
+                android:textColor="#AAAAAA"
+                android:visibility="gone"
+                android:lineSpacingExtra="3dp"/>
+        </LinearLayout>
 
         <!-- Step 0: ADB -->
         <TextView
@@ -305,7 +338,34 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="2- Erişilebilirlik ayarlarını açıp indirilen uygulamalar altında PocoVRR'a izin verin."
+            android:text="2- Kısıtlı ayarlara izin verin."
+            android:textSize="14sp"
+            android:textColor="#CCCCCC"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Android 13+ güvenlik kısıtlaması nedeniyle önce uygulama ayarlarına gidip (aşağıdan veya sağ üstten) Kısıtlı Ayarlara İzin Ver seçeneğini aktif etmelisiniz."
+            android:textSize="12sp"
+            android:textColor="#888888"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/btnOpenAppInfo"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Uygulama Ayarlarını Aç"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Step 2 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3- Erişilebilirlik ayarlarını açıp indirilen uygulamalar altında PocoVRR'a izin verin."
             android:textSize="14sp"
             android:textColor="#CCCCCC"
             android:layout_marginBottom="12dp"/>
@@ -320,11 +380,11 @@
             android:backgroundTint="#FFFFFF"
             android:layout_marginBottom="24dp"/>
 
-        <!-- Step 2 -->
+        <!-- Step 3 -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="3- Otomatik başlatmaya izin verin."
+            android:text="4- Otomatik başlatmaya izin verin."
             android:textSize="14sp"
             android:textColor="#CCCCCC"
             android:layout_marginBottom="12dp"/>
@@ -339,11 +399,11 @@
             android:backgroundTint="#FFFFFF"
             android:layout_marginBottom="24dp"/>
 
-        <!-- Step 3 -->
+        <!-- Step 4 -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="4- Uygulamanın arkaplan görevini kısıtlamasını kaldırın."
+            android:text="5- Uygulamanın arkaplan görevini kısıtlamasını kaldırın."
             android:textSize="14sp"
             android:textColor="#CCCCCC"
             android:layout_marginBottom="4dp"/>

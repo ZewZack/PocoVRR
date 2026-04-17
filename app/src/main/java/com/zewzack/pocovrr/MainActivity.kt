@@ -68,9 +68,25 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupListeners() {
+        // Neden İzin Gerekli? (Expandable Panel)
+        binding.layoutPermissionReason.setOnClickListener {
+            val isVisible = binding.tvPermissionReasonContent.visibility == android.view.View.VISIBLE
+            binding.tvPermissionReasonContent.visibility = if (isVisible) android.view.View.GONE else android.view.View.VISIBLE
+            binding.tvPermissionReasonTitle.setCompoundDrawablesWithIntrinsicBounds(
+                0, 0, if (isVisible) android.R.drawable.arrow_down_float else android.R.drawable.arrow_up_float, 0
+            )
+        }
+
         // Erişilebilirlik ayarları butonu
         binding.btnOpenAccessibility.setOnClickListener {
             startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
+        }
+
+        // Uygulama Ayarları (Kısıtlı İzinler) butonu
+        binding.btnOpenAppInfo.setOnClickListener {
+            val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+            intent.data = android.net.Uri.fromParts("package", packageName, null)
+            startActivity(intent)
         }
 
         // Otomatik Başlatma butonu
