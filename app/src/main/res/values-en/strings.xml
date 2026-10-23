@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">PocoVRR</string>
+    <string name="service_label">PocoVRR Refresh Rate Service</string>
+    <string name="service_description">Automatically raises the screen refresh rate to high Hz when motion and scrolling are detected, and drops to low Hz when idle. Stays at low Hz during video/media playback and when the keyboard is open. Preserves smoothness while saving battery.</string>
+
+    <string name="developer">Developer: @zewzack</string>
+    <string name="device_info">Poco X8 Pro Max · HyperOS</string>
+    <string name="checking_status">Checking…</string>
+    <string name="hz_placeholder">— Hz</string>
+
+    <string name="settings_title">SETTINGS</string>
+    <string name="idle_timeout">Idle Time</string>
+    <string name="minimum_hz">Minimum Hz</string>
+    <string name="maximum_hz">Maximum Hz</string>
+
+    <string name="experimental_settings">Experimental Settings (30 Hz)</string>
+    <string name="experimental_30hz_warning">Lowering the minimum Hz to 30 may cause stability issues.</string>
+
+    <string name="permissions_title">Grant Required Permissions</string>
+    <string name="permission_reason_title">🛡️ Why are so many permissions required? (Tap to expand)</string>
+    <string name="permission_reason_content">In the past, the Android ecosystem — especially on older devices — contained many malicious programs and security vulnerabilities that put end users at risk. This led people with limited technical knowledge or little familiarity with Android to consider Android devices \"unsafe.\"\n\nGoogle\'s current Android app and version policies require the user\'s explicit and informed consent even for the smallest actions that could affect a device\'s operation or layout. These multi-step procedures aim to protect user safety to the highest degree. We developers are aware that this process can sometimes make the user experience more difficult; however, these steps are part of the system\'s modern protection mechanisms.\n\nPocoVRR requests system-level critical permissions such as WRITE_SECURE_SETTINGS and the Accessibility Service to carry out its core functions. The app is fully open source, transparently inspectable, and licensed under the MIT License. Granting these permissions and using the app is entirely at your own discretion.</string>
+
+    <string name="step_adb">1- Grant system access permission via ADB (one-time):</string>
+    <string name="adb_command">adb shell pm grant com.zewzack.pocovrr android.permission.WRITE_SECURE_SETTINGS</string>
+
+    <string name="step_restricted">2- Allow restricted settings.</string>
+    <string name="step_restricted_desc">Due to Android 13+ security restrictions, you must first go to the app settings (from below or the top-right) and enable \"Allow restricted settings.\"</string>
+    <string name="btn_open_app_settings">Open App Settings</string>
+
+    <string name="step_accessibility">3- Open accessibility settings and grant permission to PocoVRR under downloaded apps.</string>
+    <string name="btn_open_accessibility">Open Accessibility Settings</string>
+
+    <string name="step_autostart">4- Allow auto-start.</string>
+    <string name="btn_autostart">Auto-start in Background</string>
+
+    <string name="step_background">5- Remove the app\'s background task restriction.</string>
+    <string name="step_background_desc">This prevents the app from being automatically closed by HyperOS optimization. It does not cause any battery or screen-on time issues.</string>
+    <string name="btn_remove_background">Remove Background Restriction</string>
+
+    <string name="status_active">⚡ Active (motion detected)</string>
+    <string name="status_idle">💤 Idle</string>
+    <string name="service_active">✅ Service Active</string>
+    <string name="service_inactive">❌ Service Off — Enable Below</string>
+</resources>

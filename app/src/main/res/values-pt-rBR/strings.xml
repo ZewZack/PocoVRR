@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">PocoVRR</string>
+    <string name="service_label">PocoVRR Serviço de Taxa de Atualização</string>
+    <string name="service_description">Aumenta automaticamente a taxa de atualização da tela para Hz alto quando detecta movimento e rolagem, e reduz para Hz baixo quando ocioso. Permanece em Hz baixo durante a reprodução de vídeo/mídia e com o teclado aberto. Preserva a fluidez enquanto economiza bateria.</string>
+
+    <string name="developer">Desenvolvedor: @zewzack</string>
+    <string name="device_info">Poco X8 Pro Max · HyperOS</string>
+    <string name="checking_status">Verificando…</string>
+    <string name="hz_placeholder">— Hz</string>
+
+    <string name="settings_title">CONFIGURAÇÕES</string>
+    <string name="idle_timeout">Tempo Ocioso</string>
+    <string name="minimum_hz">Hz Mínimo</string>
+    <string name="maximum_hz">Hz Máximo</string>
+
+    <string name="experimental_settings">Configurações Experimentais (30 Hz)</string>
+    <string name="experimental_30hz_warning">Reduzir o Hz mínimo para 30 pode causar problemas de estabilidade.</string>
+
+    <string name="permissions_title">Conceder Permissões Necessárias</string>
+    <string name="permission_reason_title">🛡️ Por que tantas permissões são necessárias? (Toque para expandir)</string>
+    <string name="permission_reason_content">No passado, o ecossistema Android — especialmente em aparelhos mais antigos — continha muitos programas maliciosos e vulnerabilidades de segurança que colocavam os usuários em risco. Isso levou pessoas com pouco conhecimento técnico ou pouca familiaridade com Android a considerar os dispositivos Android \"inseguros.\"\n\nAs políticas atuais de apps e versões do Android exigem o consentimento explícito e informado do usuário mesmo para as menores ações que possam afetar o funcionamento ou o layout do aparelho. Esses procedimentos com várias etapas visam proteger a segurança do usuário ao máximo. Nós, desenvolvedores, ciente de que esse processo pode às vezes dificultar a experiência do usuário; no entanto, essas etapas fazem parte dos mecanismos de proteção modernos do sistema.\n\nO PocoVRR solicita permissões críticas de nível de sistema, como WRITE_SECURE_SETTINGS e o Serviço de Acessibilidade, para executar suas funções principais. O app é totalmente de código aberto, transparente e inspecionável, e é licenciado sob a Licença MIT. Conceder essas permissões e usar o app é inteiramente por sua conta e risco.</string>
+
+    <string name="step_adb">1- Conceda permissão de acesso ao sistema via ADB (apenas uma vez):</string>
+    <string name="adb_command">adb shell pm grant com.zewzack.pocovrr android.permission.WRITE_SECURE_SETTINGS</string>
+
+    <string name="step_restricted">2- Permita configurações restritas.</string>
+    <string name="step_restricted_desc">Devido às restrições de segurança do Android 13+, primeiro acesse as configurações do app (pela parte inferior ou superior direita) e ative a opção \"Permitir configurações restritas\".</string>
+    <string name="btn_open_app_settings">Abrir Configurações do App</string>
+
+    <string name="step_accessibility">3- Abra as configurações de acessibilidade e conceda permissão ao PocoVRR em apps baixados.</string>
+    <string name="btn_open_accessibility">Abrir Configurações de Acessibilidade</string>
+
+    <string name="step_autostart">4- Permita a inicialização automática.</string>
+    <string name="btn_autostart">Inicialização Automática em Segundo Plano</string>
+
+    <string name="step_background">5- Remova a restrição de tarefa em segundo plano do app.</string>
+    <string name="step_background_desc">Isso evita que o app seja fechado automaticamente pela otimização do HyperOS. Não causa nenhum problema de bateria ou tempo de tela ativa.</string>
+    <string name="btn_remove_background">Remover Restrição em Segundo Plano</string>
+
+    <string name="status_active">⚡ Ativo (movimento detectado)</string>
+    <string name="status_idle">💤 Ocioso</string>
+    <string name="service_active">✅ Serviço Ativo</string>
+    <string name="service_inactive">❌ Serviço Desligado — Ative Abaixo</string>
+</resources>

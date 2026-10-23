@@ -197,7 +197,7 @@ class MainActivity : AppCompatActivity() {
     fun updateStatus(hz: Int) {
         binding.tvCurrentHz.text = "$hz Hz"
         val maxHz = settingsManager.maxHz
-        binding.tvStatus.text = if (hz == maxHz) "⚡ Aktif (hareket algılandı)" else "💤 Beklemede"
+        binding.tvStatus.text = if (hz == maxHz) getString(R.string.status_active) else getString(R.string.status_idle)
     }
 
     private fun refreshUI() {
@@ -207,10 +207,10 @@ class MainActivity : AppCompatActivity() {
         ).any { it.id.contains(packageName) }
 
         if (enabled) {
-            binding.tvServiceStatus.text = "✅ Servis Aktif"
+            binding.tvServiceStatus.text = getString(R.string.service_active)
             binding.tvCurrentHz.text     = "${RefreshRateService.currentHz} Hz"
         } else {
-            binding.tvServiceStatus.text = "❌ Servis Kapalı — Aşağıdan Aç"
+            binding.tvServiceStatus.text = getString(R.string.service_inactive)
             binding.tvCurrentHz.text     = "— Hz"
         }
 

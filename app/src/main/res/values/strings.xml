@@ -2,4 +2,43 @@
     <string name="app_name">PocoVRR</string>
     <string name="service_label">PocoVRR Yenileme Hızı Servisi</string>
     <string name="service_description">Hareket ve kaydırma algılandığında ekran yenileme hızını otomatik olarak yüksek Hz\'e çıkarır, hareketsizlikte düşük Hz\'e düşürür. Video/medya oynatılırken ve klavye açıkken düşük Hz\'de kalır. Pil tasarrufu sağlarken akıcılığı korur.</string>
+
+    <string name="developer">Developer: @zewzack</string>
+    <string name="device_info">Poco X8 Pro Max · HyperOS</string>
+    <string name="checking_status">Kontrol ediliyor…</string>
+    <string name="hz_placeholder">— Hz</string>
+
+    <string name="settings_title">AYARLAR</string>
+    <string name="idle_timeout">Bekleme Süresi (idle)</string>
+    <string name="minimum_hz">Minimum Hz</string>
+    <string name="maximum_hz">Maximum Hz</string>
+
+    <string name="experimental_settings">Deneysel Ayarlar (30 Hz)</string>
+    <string name="experimental_30hz_warning">Minimum Hz\'yi 30\'a düşürmek stabilite sorunlarına yol açabilir.</string>
+
+    <string name="permissions_title">Gerekli İzinlerin Verilmesi</string>
+    <string name="permission_reason_title">🛡️ Neden bu kadar fazla izin gerekli? (Tıklayın)</string>
+    <string name="permission_reason_content">Android ekosisteminin geçmişinde, özellikle eski nesil cihazlarda son kullanıcıları riske atan birçok zararlı yazılım ve güvenlik açığı mevcuttu. Bu durum, teknik bilgi birikimi kısıtlı olan veya Android ekosistemine uzak kullanıcıların Android cihazları \'güvensiz\' olarak nitelendirmesine yol açmıştır.\n\nGoogle\'ın güncel Android uygulama ve sürüm politikaları, cihazın işleyişini veya düzenini etkileyebilecek en küçük eylemlerde dahi son kullanıcının kesin ve bilinçli onayını şart koşmaktadır. Bu çok aşamalı işlem adımları, kullanıcı güvenliğini en üst düzeyde korumayı hedefler. Biz geliştiriciler, bu süreçlerin kullanıcı deneyimini zaman zaman zorlaştırdığının farkındayız; ancak bu adımlar sistemin modern koruma mekanizmasının bir parçasıdır.\n\nPocoVRR, temel işlevlerini yerine getirebilmek adına WRITE_SECURE_SETTINGS ve Erişilebilirlik Servisi gibi sistem düzeyinde kritik yetkiler talep etmektedir. Uygulama tamamen açık kaynak kodlu olup, şeffaf bir şekilde incelenebilir ve MIT Lisansı ile korunmaktadır. Bu yetkileri verip uygulamayı kullanma takdiri tamamen size aittir.</string>
+
+    <string name="step_adb">1- ADB üzerinden sisteme erişim izni verin (Bir kez yeterlidir):</string>
+    <string name="adb_command">adb shell pm grant com.zewzack.pocovrr android.permission.WRITE_SECURE_SETTINGS</string>
+
+    <string name="step_restricted">2- Kısıtlı ayarlara izin verin.</string>
+    <string name="step_restricted_desc">Android 13+ güvenlik kısıtlaması nedeniyle önce uygulama ayarlarına gidip (aşağıdan veya sağ üstten) Kısıtlı Ayarlara İzin Ver seçeneğini aktif etmelisiniz.</string>
+    <string name="btn_open_app_settings">Uygulama Ayarlarını Aç</string>
+
+    <string name="step_accessibility">3- Erişilebilirlik ayarlarını açıp indirilen uygulamalar altında PocoVRR\'a izin verin.</string>
+    <string name="btn_open_accessibility">Erişilebilirlik Ayarlarını Aç</string>
+
+    <string name="step_autostart">4- Otomatik başlatmaya izin verin.</string>
+    <string name="btn_autostart">Arka Planda Otomatik Başlatma</string>
+
+    <string name="step_background">5- Uygulamanın arkaplan görevini kısıtlamasını kaldırın.</string>
+    <string name="step_background_desc">Uygulamanın HyperOS optimizasyonu açısından otomatik olarak kapatılmaması içindir. Herhangi batarya / ekran süresi sorunu oluşturmaz.</string>
+    <string name="btn_remove_background">Arkaplan Kısıtlamasını Kaldır</string>
+
+    <string name="status_active">⚡ Aktif (hareket algılandı)</string>
+    <string name="status_idle">💤 Beklemede</string>
+    <string name="service_active">✅ Servis Aktif</string>
+    <string name="service_inactive">❌ Servis Kapalı — Aşağıdan Aç</string>
 </resources>
