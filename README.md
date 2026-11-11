@@ -1,89 +1,91 @@
-# PocoVRR — Poco X8 Pro Max / HyperOS 3 VRR Motoru
+# PocoVRR — Poco X8 Pro Max / HyperOS 3 VRR Engine
 
 [![Developer](https://img.shields.io/badge/Developer-@zewzack-white?style=flat-square)](https://github.com/zewzack)
 [![Platform](https://img.shields.io/badge/Platform-Android_14+_HyperOS-black?style=flat-square)](https://github.com/zewzack/PocoVRR)
 
-PocoVRR, Poco X8 Pro Max (LTPS Panel) ve HyperOS cihazlar için özel olarak geliştirilmiş, akıllı ve optimize edilmiş bir **Yenileme Hızı (VRR) Kontrolcüsü**dür. 
+[Português (BR)](README.pt-BR.md) · [Türkçe](README.tr.md)
 
-## 🚀 Öne Çıkan Özellikler
+PocoVRR is a smart, optimized **Refresh Rate (VRR) Controller** built specifically for the Poco X8 Pro Max (LTPS panel) and HyperOS devices.
 
-- **Akıllı Geçiş:** Parmak ekrana değdiği an 120 Hz, hareketsizlikte belirlediğiniz süre sonunda (1s-3s) Min Hz (60, 90, 120).
-- **Powerkeeper Koruması:** Sistem servislerinin (Powerkeeper) yenileme hızını düşürmesini engelleyen **Guard Loop** ve **ContentObserver** mekanizması.
-- **Tam Ekran Deneyimi:** Tamamen siyah ve uçtan uca (Edge-to-Edge) modern arayüz tasarımı.
-- **Düşük Gecikme:** Erişilebilirlik servisleri üzerinden dokunma ve kaydırma eventlerini anlık yakalama.
+## 🚀 Key Features
+
+- **Smart switching:** 120 Hz the moment your finger touches the screen; after the idle timeout you configure (1s–3s), it drops to the minimum Hz (60, 90, 120).
+- **Powerkeeper protection:** a **Guard Loop** and **ContentObserver** mechanism that stops system services (Powerkeeper) from lowering the refresh rate.
+- **Full-screen experience:** a fully black, edge-to-edge modern interface.
+- **Low latency:** touch and scroll events captured instantly through accessibility services.
 
 ---
 
-## 🛠️ Kurulum Rehberi (ÖNEMLİ)
+## 🛠️ Setup Guide (IMPORTANT)
 
-Uygulamanın çalışması için sistem ayarlarını değiştirme yetkisine sahip olması gerekir. Bu yetki sadece bilgisayar üzerinden bir kez verilebilir.
+The app needs permission to change system settings in order to work. This permission can only be granted once, from a computer.
 
-### 🛡️ Neden Bu Kadar Fazla İzin Gerekiyor?
+### 🛡️ Why does it need so many permissions?
 
 <details>
-<summary><b>Detaylı Güvenlik ve Şeffaflık Açıklaması (Tıklayın)</b></summary>
+<summary><b>Detailed security &amp; transparency note (click to expand)</b></summary>
 
-Android ekosisteminin geçmişinde, özellikle eski nesil cihazlarda son kullanıcıları riske atan birçok zararlı yazılım ve güvenlik açığı mevcuttu. Bu durum, teknik bilgi birikimi kısıtlı olan veya Android ekosistemine uzak kullanıcıların Android cihazları "güvensiz" olarak nitelendirmesine yol açmıştır.
+The history of the Android ecosystem includes malware and vulnerabilities that put end users at risk, especially on older devices. As a result, users with limited technical knowledge — or who are far from the Android ecosystem — ended up regarding Android devices as "unsafe".
 
-Google'ın güncel Android uygulama ve sürüm politikaları, cihazın işleyişini veya düzenini etkileyebilecek en küçük eylemlerde dahi son kullanıcının kesin ve bilinçli onayını şart koşmaktadır. Bu çok aşamalı işlem adımları (ADB komutları, Erişilebilirlik onayları vb.), kullanıcı güvenliğini en üst düzeyde korumayı hedefler. Biz geliştiriciler, bu süreçlerin kullanıcı deneyimini zaman zaman zorlaştırdığının farkındayız; ancak bu adımlar sistemin modern koruma mekanizmasının bir parçasıdır.
+Google's current Android app and version policies require the end user's explicit, informed consent even for the smallest actions that could affect how the device behaves or is organized. This multi-step flow (ADB commands, accessibility confirmations, etc.) is meant to keep user safety as high as possible. We developers know these steps sometimes make the experience harder; but they are part of the system's modern protection mechanisms.
 
 </details>
 
-### 1. Adım: Telefondan Hazırlık
-1. **Ayarlar > Telefon Hakkında** kısmına gidin ve **OS Sürümü** (veya MIUI Sürümü) üzerine 7 kez dokunarak **Geliştirici Seçeneklerini** açın.
-2. **Ek Ayarlar > Geliştirici Seçenekleri** yolunu izleyin.
-3. Şu üç seçeneği de aktif edin:
-   - **USB Hata Ayıklama (USB Debugging)**
-   - **USB Hata Ayıklama (Güvenlik Ayarları) / USB Debugging (Security Settings)** *(MIUI/HyperOS için kritiktir)*
-   - **USB üzerinden yükle**
+### Step 1: Prepare the phone
+1. Go to **Settings > About phone** and tap **OS version** (or MIUI version) 7 times to enable **Developer options**.
+2. Go to **Additional settings > Developer options**.
+3. Enable all three options:
+   - **USB debugging**
+   - **USB debugging (Security settings)** *(critical on MIUI/HyperOS)*
+   - **Install via USB**
 
-### 2. Adım: Play Protect Uyarısını Geçme
-**PocoVRR**, temel işlevlerini yerine getirebilmek adına `WRITE_SECURE_SETTINGS` ve Erişilebilirlik Servisi gibi sistem düzeyinde kritik yetkiler talep etmektedir. Bu yetkiler nedeniyle Google Play Protect, uygulamayı "Tanımlanamayan Yayıncı" olarak işaretleyip yükleme sırasında bir uyarı çıkartabilir veya yüklemeyi engelleyebilir.
+### Step 2: Getting past the Play Protect warning
+To do its job, PocoVRR requests system-level permissions such as `WRITE_SECURE_SETTINGS` and the Accessibility Service. Because of these, Google Play Protect may flag the app as coming from an "Unknown publisher" and show a warning — or block the install.
 
-**🛡️ Play Protect Uyarısını Geçme:**
-1. Play Store uygulamasını açın ve sağ üstteki profil simgenize dokunun.
-2. **Play Protect > Ayarlar (Dişli çark)** kısmına girin.
-3. **"Uygulamaları Play Protect ile tara"** seçeneğini geçici olarak kapatın.
-4. PocoVRR APK dosyasını yükleyin. Yükleme bittikten sonra bu ayarı tekrar açabilirsiniz.
+**🛡️ Getting past the Play Protect warning:**
+1. Open the Play Store and tap your profile icon in the top right.
+2. Go to **Play Protect > Settings (gear icon)**.
+3. Temporarily turn off **"Scan apps with Play Protect"**.
+4. Install the PocoVRR APK. You can turn the setting back on once the install finishes.
 
-Uygulamanın bu uyarıyı vermesi tamamen talep ettiği sistem yetkileriyle ilgilidir ve cihazınız için herhangi bir güvenlik riski oluşturmaz. Uygulama tamamen **açık kaynak kodlu** olup, şeffaf bir şekilde incelenebilir ve **MIT Lisansı** ile korunmaktadır.
+This warning is entirely due to the system permissions the app requests and poses no security risk to your device. The app is fully **open source**, can be inspected transparently, and is released under the **MIT License**.
 
 ![Play Protect](media/play_protect.jpg)
 
-### 3. Adım: Bilgisayardan Yetkilendirme (ADB)
-1. Bilgisayarınıza [Android Platform Tools (ADB)](https://developer.android.com/tools/releases/platform-tools?hl=tr) paketini indirin ve bir klasöre çıkartın.
-2. Telefonunuzu USB kablosuyla bilgisayara bağlayın. Telefondan "Dosya Aktarımı" modunu seçin ve ekranda çıkan "USB Hata Ayıklama" uyarısına **"Her zaman izin ver"** diyerek onay verin.
-3. ADB klasörünün içindeyken (adb.exe dosyasının olduğu yerde) boş bir yere **Shift + Sağ Tık** yapıp "PowerShell penceresini buradan açın" veya "Terminal aç" deyin.
-4. Terminal ekranına şu komutu kopyalayıp yapıştırın ve Enter'a basın:
+### Step 3: Authorize from your computer (ADB)
+1. Download the [Android Platform Tools (ADB)](https://developer.android.com/tools/releases/platform-tools) package on your computer and extract it to a folder.
+2. Connect the phone to the computer with a USB cable. Select "File transfer" mode on the phone and tap **"Always allow"** on the "USB debugging" authorization dialog.
+3. Inside the ADB folder (where `adb.exe` lives), **Shift + Right-click** an empty area and choose "Open PowerShell window here" or "Open terminal".
+4. Paste this command into the terminal and press Enter:
 
 ```bash
 ./adb shell pm grant com.zewzack.pocovrr android.permission.WRITE_SECURE_SETTINGS
 ```
 
-### 4. Adım: Uygulama İçi İzinler
-Bilgisayardaki işlem bittikten sonra uygulama içindeki şu izinleri de sırasıyla verin:
-- **Kısıtlı Ayarlara İzin Ver:** Uygulama ayarlarından bu izni aktif etmeden Erişilebilirlik izni verilemez.
-- **Erişilebilirlik Servisi:** PocoVRR'ı "Yüklü Uygulamalar" altından aktif edin.
-- **Otomatik Başlatma:** Uygulamanın sistem tarafından kapatılmaması için izin verin.
-- **Pil Kısıtlaması:** Pil tasarrufu ayarını **"Kısıtlama Yok"** olarak değiştirin.
+### Step 4: In-app permissions
+After the computer step is done, grant these permissions inside the app, in order:
+- **Allow restricted settings:** the accessibility permission cannot be granted until this is enabled in the app's settings.
+- **Accessibility service:** enable PocoVRR under "Downloaded apps".
+- **Autostart:** allow it so the system doesn't kill the app.
+- **Battery restriction:** set the battery saver option to **"No restrictions"**.
 
 ---
 
-## ⚙️ Uygulama Ayarları
+## ⚙️ App Settings
 
-- **Minimum Hz:** 30 (Deneysel), 60, 90, 120. (Pil tasarrufu ve akıcılık dengesi)
-- **Maximum Hz:** 60, 90, 120. (Etkileşim anındaki hız)
-- **Bekleme Süresi (Idle):** Hareketsizlikten kaç saniye sonra Hz düşürüleceği (1s, 2s, 3s).
+- **Minimum Hz:** 30 (experimental), 60, 90, 120. (battery vs. smoothness trade-off)
+- **Maximum Hz:** 60, 90, 120. (the speed while you're interacting)
+- **Idle delay:** how many seconds of inactivity before the Hz drops (1s, 2s, 3s).
 
 ---
 
-## 🖥️ Teknik Detaylar
+## 🖥️ Technical Details
 
-PocoVRR, HyperOS'un özel secure settings anahtarlarını kontrol eder:
+PocoVRR controls HyperOS's proprietary secure settings keys:
 - `miui_refresh_rate`
 - `user_refresh_rate`
 
-Uygulama geçişlerinde veya sistem müdahalelerinde 500ms boyunca her 100ms'de bir değeri kontrol eden ve hedef değerde tutan bir **Guard** mekanizmasına sahiptir.
+During transitions or system interventions, a **Guard** mechanism checks the value every 100 ms for 500 ms and keeps it pinned at the target value.
 
 ---
 
@@ -92,4 +94,4 @@ Uygulama geçişlerinde veya sistem müdahalelerinde 500ms boyunca her 100ms'de 
 
 ---
 
-*Bu proje açık kaynak olarak paylaşılmıştır. Herhangi bir batarya veya ekran süresi sorunu oluşturmaz, aksine statik görüntülerde Hz düşürerek pil ömrüne katkı sağlar.*
+*This project is shared as open source. It does not cause any battery or screen-on time problems; on the contrary, it helps battery life by lowering the Hz on static images.*
